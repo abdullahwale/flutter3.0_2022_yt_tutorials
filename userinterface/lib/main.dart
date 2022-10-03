@@ -1,114 +1,87 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(Desiging());
+  runApp(MAD_SecA());
 }
 
-class Desiging extends StatelessWidget {
-  const Desiging({Key? key}) : super(key: key);
+class MAD_SecA extends StatelessWidget {
+  const MAD_SecA({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Container(
-        decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.blueAccent,Colors.black])),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          appBar: AppBar(),
-          body: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage('images/my.png'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("My Card"),
+          centerTitle: true,
+        ),
+        body: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          //crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 30),
+                  child: CircleAvatar(
                     radius: 50,
+                    backgroundImage: AssetImage("images/my.png"),
                   ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  Column(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: Column(
                     children: [
                       Text(
-                        'Muhammad Abdullah',
+                        "Abdullah",
                         style: TextStyle(
-                          fontSize: 30,
-                          fontStyle: FontStyle.italic,
-                          fontWeight: FontWeight.bold,
-                        ),
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.purple),
                       ),
-                      Text('Flutter App development'),
+                      Text("Flutter App Development Course"),
                     ],
                   ),
-                ],
-              ),
-              SizedBox(height: 30,),
-              Card(
-
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
                 ),
-                color: Colors.pink,
-                //mainAxisSize: MainAxisSize.min,
+              ],
+            ),
+            Container(
+              child: Divider(
+                color: Colors.purple,
+              ),
+              width: 400,
+            ),
+            Card(
+              color: Colors.greenAccent,
                 child: ListTile(
-                  leading: Icon(Icons.email),
-                  title: Text('The Enchanted Nightingale'),
-                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                  iconColor: Colors.amber,
-                ),
+              leading: Icon(
+                Icons.email,
+                color: Colors.purple,
               ),
-              Card(
-
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                  title: Text("Personal Email ID"),
+                  subtitle: Text("abdullahwale@gmail.com"),
+            )),
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("images/my.png"),
                 ),
-                color: Colors.blue,
-                //mainAxisSize: MainAxisSize.min,
-                child: ListTile(
-                  leading: Icon(Icons.email),
-                  title: Text('The Enchanted Nightingale'),
-                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                  iconColor: Colors.amber,
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("images/my.png"),
                 ),
-              ),
-              Card(
-
-                elevation: 10,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.0),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("images/my.png"),
                 ),
-                color: Colors.green,
-                //mainAxisSize: MainAxisSize.min,
-                child: ListTile(
-                  leading: Icon(Icons.email),
-                  title: Text('The Enchanted Nightingale'),
-                  subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                  iconColor: Colors.amber,
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/fb.png'),
-                      radius: 30,
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/fb.png'),
-                      radius: 30,
-                    ),
-                    CircleAvatar(
-                      backgroundImage: AssetImage('images/fb.png'),
-                      radius: 30,
-                    ),
-                  ],),
-              ),
-            ],
-          ),
+              ],),
+            ),
+          ],
         ),
       ),
     );
@@ -116,121 +89,20 @@ class Desiging extends StatelessWidget {
 }
 
 /*
-Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(),
-        body: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/my.png'),
-                  radius: 50,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Text(
-                      'Muhammad Abdullah',
-                      style: TextStyle(
-                        fontSize: 30,
-                        fontStyle: FontStyle.italic,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('Flutter App development'),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(height: 30,),
-            Card(
-
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              color: Colors.pink,
-              //mainAxisSize: MainAxisSize.min,
-              child: ListTile(
-                leading: Icon(Icons.email),
-                title: Text('The Enchanted Nightingale'),
-                subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                iconColor: Colors.amber,
-              ),
-            ),
-            Card(
-
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              color: Colors.blue,
-              //mainAxisSize: MainAxisSize.min,
-              child: ListTile(
-                leading: Icon(Icons.email),
-                title: Text('The Enchanted Nightingale'),
-                subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                iconColor: Colors.amber,
-              ),
-            ),
-            Card(
-
-              elevation: 10,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0),
-              ),
-              color: Colors.green,
-              //mainAxisSize: MainAxisSize.min,
-              child: ListTile(
-                leading: Icon(Icons.email),
-                title: Text('The Enchanted Nightingale'),
-                subtitle: Text('Music by Julie Gable. Lyrics by Sidney Stein.'),
-                iconColor: Colors.amber,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/fb.png'),
-                  radius: 30,
-                ),
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/fb.png'),
-                  radius: 30,
-                ),
-                CircleAvatar(
-                  backgroundImage: AssetImage('images/fb.png'),
-                  radius: 30,
-                ),
-              ],),
-            ),
-          ],
-        ),
-      )
- */
-
-
-/*
-Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: <Widget>[
-                      TextButton(
-                        child: const Text('BUY TICKETS'),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                      TextButton(
-                        child: const Text('LISTEN'),
-                        onPressed: () {/* ... */},
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
+ // Container(
+            //   color: Colors.green,
+            //   child: Text("Abdullah",style: TextStyle(fontSize: 50),),
+            // ),
+            // Container(
+            //   color: Colors.green,
+            //   child: Text("Abdullah",style: TextStyle(fontSize: 50),),
+            // ),
+            // Container(
+            //   color: Colors.green,
+            //   child: Text("Abdullah",style: TextStyle(fontSize: 50),),
+            // ),
+            // Container(
+            //   color: Colors.green,
+            //   child: Text("Abdullah",style: TextStyle(fontSize: 50),),
+            // ),
  */
