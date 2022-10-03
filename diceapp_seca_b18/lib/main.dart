@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+
+Random random = new Random();
 
 void main() {
   runApp(DiceAppSecAB18());
 }
 
 class DiceAppSecAB18 extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,6 +20,7 @@ class DiceAppSecAB18 extends StatelessWidget {
     );
   }
 }
+
 class Dice extends StatefulWidget {
   const Dice({Key? key}) : super(key: key);
 
@@ -27,38 +29,53 @@ class Dice extends StatefulWidget {
 }
 
 class _DiceState extends State<Dice> {
-  int num=1;
+  int num = 1;
+  int num2=1;
+
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      child: Container(
-        color: Colors.greenAccent,
-        child: Center(
-          child: Image(
-            image: AssetImage("images/dice$num.png"),
+    return Row(
+      children: [
+        Expanded(
+          child: TextButton(
+            child: Container(
+              color: Colors.greenAccent,
+              child: Center(
+                child: Image(
+                  image: AssetImage("images/dice$num.png"),
+                ),
+              ),
+            ),
+            onPressed: () {
+              setState(() {
+                num = random.nextInt(6)+1;
+              });
+              print(num);
+            },
           ),
         ),
-      ),
-      onPressed: () {
-        setState(() {
-
-
-        });
-        print(num);
-      },
+        Expanded(
+          child: TextButton(
+            child: Container(
+              color: Colors.greenAccent,
+              child: Center(
+                child: Image(
+                  image: AssetImage("images/dice$num2.png"),
+                ),
+              ),
+            ),
+            onPressed: () {
+              setState(() {
+                num2 = random.nextInt(6)+1;
+              });
+              print(num2);
+            },
+          ),
+        ),
+      ],
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 /*
          if(num==1)
@@ -74,22 +91,6 @@ class _DiceState extends State<Dice> {
           else
             num=1;
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 Container(
