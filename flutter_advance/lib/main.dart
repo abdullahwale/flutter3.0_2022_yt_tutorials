@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           title: Text("Opacity App"),
         ),
         body: Column(
-          
+
           children: [
             Opacity(
               opacity: val,
